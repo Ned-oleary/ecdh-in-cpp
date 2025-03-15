@@ -32,4 +32,4 @@
 *.app
 
 # Ignore ecdh compiled binary
-ecdh
+/ecdh
