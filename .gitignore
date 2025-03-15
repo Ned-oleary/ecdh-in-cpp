@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Ignore ecdh compiled binary
+ecdh
