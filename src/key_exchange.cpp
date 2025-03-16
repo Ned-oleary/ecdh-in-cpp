@@ -1,6 +1,5 @@
 #include "../include/key_exchange.h"
 
-// Generate a random private key in range [1, n-1]
 int64_t generate_private_key(int64_t n) {
     std::random_device random_device;
     std::mt19937_64 gen(random_device());

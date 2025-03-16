@@ -30,7 +30,7 @@ int64_t modular_exponentiation(int64_t base, int64_t exponent, int64_t p){
 
 // note: uses Fermat's Little Theroem
 // p must therefore be a prime number!
-int64_t modular_inverse(int64_t a, int64_t b, int64_t p){
+int64_t modular_inverse(int64_t a, int64_t p){
     int64_t accumulated_value = 1;
     int64_t base = a;
     int64_t exponent = p - 2;
