@@ -58,6 +58,20 @@ EllipticCurvePoint elliptic_curve_double(const EllipticCurvePoint &P, int64_t a,
 
 };
 
+// now we need a function for scalar multiplication of an elliptic curve point, i.e. k * P for some P on EC
+// kP = P + P + P ... P 
+// we use the binary representation of k, traversing the bits from right to left
+
 EllipticCurvePoint elliptic_curve_multiply(int64_t k, const EllipticCurvePoint &P, int64_t a, int64_t p){
-    
+    EllipticCurvePoint accumulated_point;
+    EllipticCurvePoint base_point = P; 
+    while ( k > 0 ){
+        if ( k & 1 ){
+            accumulated_point = elliptic_curve_add(accumulated_point, base_point, a, p); // accumulate IFF we see a 1 bit at rightmost
+        }
+        base_point = elliptic_curve_double(base_point, a, p); // capture increasing exponent as we move toward the left bits
+        k = k >> 1; // right shift is equivalent to division by two, lets us traverse the bits right to left by looking at rightmost
+    }
+
+    return accumulated_point;
 };
