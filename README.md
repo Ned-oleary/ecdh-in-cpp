@@ -10,7 +10,7 @@ it's a dumb implementation for a few reasons:
 * it's probably slow
 * it probably has a few bugs that I haven't found yet -- I didn't test this very much
 
-it does seemingly work for very simple curves and very small prime numbers. it definitively does *not* work for real-world ECs like secp256k1
+it does seemingly work (sometimes) for very simple curves and very small prime numbers. it definitively does *not* work for real-world ECs like secp256k1
 
 I probably won't revisit this any time soon
 
